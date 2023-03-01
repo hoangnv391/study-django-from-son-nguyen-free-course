@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    {% if question %}
+        <h2><b>Câu hỏi: </b>{{question.question_text}}</h2>
+        {% if choice_list %}
+            {% for choice in choice_list %}
+                <p>{{choice.choice_text}}: {{choice.vote}}</p>
+            {% endfor %}
+        {% else %}
+            <h4>Không tồn tại đáp án cho câu hỏi này!!!</h4>
+        {% endif %}
+    {% else %}
+        <h3>Không tồn tại câu hỏi này!!!</h3>
+    {% endif %}
+{% endblock %}

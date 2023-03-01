@@ -1,0 +1,17 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    {% if question != 'null' %}
+        <p><b>Câu hỏi: </b>{{question.question_text}}</p>
+        <form action="{% url 'polls:vote_result' question.id %}" method="post">
+            {% csrf_token %}
+            {% for item in question.choice_set.all %}
+                <input type="radio" id="{{item.id}}" name="answer" value="{{item.id}}">
+                <label for="{{item.id}}">{{item.choice_text}}</label>
+            {% endfor %}
+            <input type="submit" value="Gửi">
+        </form>
+    {% else %}
+        <h3>Không có dữ liệu về câu hỏi này!!!</h3>
+    {% endif %}
+{% endblock %}

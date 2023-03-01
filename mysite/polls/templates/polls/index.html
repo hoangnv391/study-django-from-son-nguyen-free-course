@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+    <h1>Đây là template</h1>
+    <p>Ví dụ đầu tiên về Template</p>
+    <p>Ví dụ về truyền biến vào template: <b>{{name}}</b></p>
+    <p>Ví dụ về truyền 1 list vào trong Template, tiện thể có xài If coi có được ko :V:</p>
+    <p>Danh sách đồ dùng cá nhân:</p>
+    <ul>
+        {% for object in item %}
+            {% if object != 'Love' %}
+                <li>{{object}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
+

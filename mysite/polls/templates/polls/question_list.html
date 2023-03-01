@@ -1,0 +1,21 @@
+{% extends "polls/base.html" %}
+{% block content %}
+    {% if ques_lst %}
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Time public</th>
+            </tr>
+            {% for question in ques_lst %}
+                <tr>
+                    <td><a href="{% url 'polls:question_detail' question.id %}">{{question.question_text}}</a></td>
+                    <td>{{question.time_pub}}</td>
+                </tr>
+            {%  endfor %}
+        </table>
+        <p>Ví dụ in ra một object với thuộc tính có giá trị được tìm (có id=1) chẳng hạn:</p>
+        <p>{{spec_lst.question_text}}</p>
+    {% else %}
+        <h3>Data of question is empty!!!</h3>
+    {% endif %}
+{% endblock %}

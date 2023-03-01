@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+</head>
+<body>
+  <div class="header">
+    <h1>Đây là phần base, tức là phần ko thay đổi trong các site</h1>
+    <p class="test_css">Đoạn văn test css theo kiểu external, nếu đúng thì nó có màu đỏ</p>
+  </div>
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <div class="footer">
+    <p>Đoạn văn này có hiển thị, tức là extend template đã thành công</p>
+  </div>
+</body>
+</html>
