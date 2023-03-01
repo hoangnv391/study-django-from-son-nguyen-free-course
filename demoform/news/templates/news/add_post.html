@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post Page</title>
+    <style>
+        .title {
+            border: 2px solid blue;
+        }
+        .content {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <p>Có phần để thử widget với modelform</p>
+    <p>Phần nhập tiêu đề có viền màu xanh</p>
+    <p>Phần nhập nội dung có viền màu đỏ</p>
+    <form action="{% url 'news:save_post' %}" method="post">
+        {% csrf_token %}
+        <div>{{f.title}}</div>
+        <div>{{f.content}}</div>
+        <div>{{f.time_create}}</div>
+        <input type="submit" value="Thêm">
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Email Page</title>
+    <style>
+        .content {
+            padding: 20px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<p>Chỗ nhập nội dung email được dùng để thử nghiệm widget trong form, nếu đúng thì nó sẽ có padding 20px và
+    nền đỏ</p>
+<form action="{% url 'news:send_submit' %}" method="post">
+    {% csrf_token %}
+    {{f}}
+    <input type="submit" value="Gửi email">
+</form>
+</body>
+</html>
